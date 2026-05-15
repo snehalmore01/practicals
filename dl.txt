@@ -1,3 +1,4 @@
+DL1
 -imported this:
 NumPy → Handles data
 StandardScaler → Scales data
@@ -54,8 +55,7 @@ df	          Stores tabular data--
 df.columns	Access column names
 =		Assign new names--
 
--
-df		DataFrame
+-df		DataFrame
 ['PRICE']	New column name
 Y_train		House prices/output
 
@@ -113,6 +113,63 @@ Y_test[i]	Actual value
 
 
 
+DL2
+-Import		Purpose
+TensorFlow	Deep learning framework
+imdb		Movie review dataset
+Sequential	Neural network model
+Dense		Fully connected layer
+Embedding	Convert words to vectors
+Flatten		Convert output to 1D
+pad_sequences	Make all reviews equal length---
+
+-Code	Purpose
+vocab_size = 10000	Limit vocabulary
+imdb.load_data()	Load IMDB dataset
+num_words=vocab_size	Use top frequent words
+X_train	Training reviews
+y_train	Training labels
+X_test	Testing reviews
+y_test	Testing labels---
+
+-max_length = 200	Set review length
+pad_sequences()	Equalize sequence size---
+
+-Layer		Purpose
+Embedding	Convert words to vectors
+Flatten		Convert multi-dimensional data to 1D
+Dense(64)	Learn text patterns
+Dense(32)	Learn deeper features
+Dense(1)	Binary output
+Sigmoid		Probability prediction (>0.5- positive else negative---
+
+-Parameter	Purpose
+optimizer='adam'	Update weights efficiently
+loss='binary_crossentropy'	Binary classification loss
+metrics=['accuracy']	Measure prediction accuracy
+compile()	Configure model before training---
+
+-Parameter	Purpose
+fit()	Train model
+X_train	Input reviews
+y_train	Sentiment labels
+epochs=10	Number of training cycles
+batch_size=128	Reviews processed together
+validation_split=0.2	20% data used for validation
+history	Stores training results---
+
+-predict()		Predict sentiments
+predictions[i][0]	Predicted probability
+y_test[i]	Actual label
+:.2f		2 decimal formatting
+for loop	Display multiple predictions---
+
+-Function	Purpose
+plot()	Draw graph
+loss	Training error
+val_loss	Validation error---
+
+
 
 
 
@@ -131,19 +188,24 @@ Dense	Classification layer
 Flatten	Convert 2D → 1D
 Dropout	Prevent overfitting
 to_categorical	One-hot encoding------
+
 -trainX	 Training images
 trainY	Training labels
 testX	Testing images
 testY	Testing labels
 shape   Shows dataset dimensions (60000, 28, 28) -60,000 training images, each image size = 28×28 pixels---
+
 -reshape (samples, height, width, color channels)----
+
 -astype('float32')	Convert integers to decimal values
 /255.0		Normalize pixel values
 Final range	0 to 1
 Benefit		Faster and better CNN training---
+
 -to_categorical()	Convert labels into categorical vectors
 Integer label	Single class number
 One-hot encoding	Binary class vector---
+
 -Layer	Purpose
 Conv2D	Extract image features
 MaxPooling2D	Reduce feature size
@@ -151,18 +213,20 @@ Flatten	Convert 2D → 1D
 Dense	Learn patterns
 Dropout	Prevent overfitting
 Softmax	Output class probabilities between 0 and 1 and all sums exactly 1---
+
 -Parameter	Purpose
 optimizer='adam'	Updates weights efficiently
 loss='categorical_crossentropy'	Calculates classification error
 metrics=['accuracy']	Measures prediction accuracy
 compile()	Configures model before training---
+
 -fit()		Train model
 trainX		Training images
 trainY		Training labels
 validation_data	Test dataset for validation
 history		Stores training results---
 
--for dataset to show images hh
+-to show the dataset: 
 for i in range(9):
 
     plt.subplot(3,3,i+1)
